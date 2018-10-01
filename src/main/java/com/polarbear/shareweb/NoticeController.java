@@ -34,6 +34,13 @@ public class NoticeController {
         return "redirect:notice";
     }
 
+    @RequestMapping(value = { "/previewMsg" }, method = RequestMethod.POST)
+    public String previewMsg(Model model, @RequestParam("systemMessage") String message) {
+        model.addAttribute("message", message);
+        return "preview";
+    }
+
+
     @RequestMapping(value = { "/notice" }, method = RequestMethod.GET)
     public String readMessage(Model model) {
 
