@@ -18,26 +18,34 @@
 
 <body>
     <div class="container">
-        <form th:action="@{/login}" method="post">
-            <div class="form-group">
-                <label for="username">Username</label>:
-                <input type="text" id="username" name="username" class="form-control" autofocus="autofocus" placeholder="Username">
+        <div class="card text-white bg-secondary mb-3">
+            <div class="card-header">
+                Notice Application
             </div>
-            <div class="form-group">
-                <label for="password">Password</label>:
-                <input type="password" id="password" name="password" class="form-control" placeholder="Password">
-            </div>
-            <div class="form-group">
-                <div class="row">
-                    <div class="col-sm-4"></div>
-                    <div class="col-sm-4">
-                        <input type="submit" name="login-submit" id="login-submit" class="form-control btn btn-primary center-block"
-                            value="Sign In">
+            <div class="card-body">
+                <form th:action="@{/login}" method="post">
+                    <div class="form-group">
+                        <label for="username">Username</label>:
+                        <input type="text" id="username" name="username" class="form-control" autofocus="autofocus"
+                            placeholder="Username">
                     </div>
-                    <div class="col-sm-4"></div>
-                </div>
+                    <div class="form-group">
+                        <label for="password">Password</label>:
+                        <input type="password" id="password" name="password" class="form-control" placeholder="Password">
+                    </div>
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col-sm-4"></div>
+                            <div class="col-sm-4">
+                                <input type="submit" name="login-submit" id="login-submit" class="form-control btn btn-primary center-block"
+                                    value="Sign In">
+                            </div>
+                            <div class="col-sm-4"></div>
+                        </div>
+                    </div>
+                </form>
             </div>
-        </form>
+        </div>
     </div> <!-- /container -->
     <div th:if="${param.error}">
         Invalid username and password.
